@@ -1,4 +1,4 @@
-# BRVC Stablecoin
+# Satoshi Stablecoin
 
 Initial idea:
 
