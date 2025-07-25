@@ -13,7 +13,7 @@ Potential ticker symbol: USBT
 
 STEPS:
 
-Draft a “BRVC Stability Policy” outlining your collateral type, reserve audit frequency, governance model, and compliance strategy
+Draft a “BRVC Stability Policy” outlining collateral type, reserve audit frequency, governance model, and compliance strategy
 
 Build or adopt a Proof-of-Reserve tool so users can verify backing in real-time
 
