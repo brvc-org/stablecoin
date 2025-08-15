@@ -24,36 +24,45 @@ Map out governance: e.g. multisig signers, emergency pause functions, DAO thresh
 Plan AML/KYC and compliance logistics — especially given cross‑border implications
 
 ***
-# Proof-of-Reserves (PoR) Checklist for USBTC on Liquid
+# USBTC on Liquid — Full Setup Checklist
 
-- [ ] **Publish Reserve Addresses**
-  - Maintain a list of Bitcoin addresses (or xpubs) holding BTC reserves.
-  - Ensure public verifiability via any Bitcoin block explorer.
-  - Optional: Engage a 3rd-party auditor for ownership confirmation.
+## 1. Network & Infrastructure
+- [ ] Set up a Liquid node or connect to a trusted provider
+- [ ] Create separate wallets for issuing USBTC, operational fees, and reserves
+- [ ] Implement secure key management (multi-sig recommended)
+- [ ] Set up monitoring for node health and transactions
 
-- [ ] **Signed Message Verification**
-  - Create signed messages for each reserve wallet, e.g.:
-    ```
-    This wallet proves control of BTC reserves for USBTC as of YYYY-MM-DD.
-    ```
-  - Make signed messages publicly accessible for verification.
+## 2. Proof-of-Reserves (PoR)
+- [ ] Maintain a list of BTC reserve addresses or xpubs
+- [ ] Sign messages for each reserve wallet
+- [ ] Publish PoR metadata with USBTC asset
+- [ ] Automate reserve vs. supply checks
 
-- [ ] **Link Reserves to USBTC Issuance**
-  - Include in Liquid asset metadata:
-    - URL to BTC reserve addresses list.
-    - Latest signed PoR message.
-    - Peg-in transaction IDs (if part of reserves are in L-BTC).
+## 3. Collateral & Issuance Management
+- [ ] Define 1:1 collateral ratio policy
+- [ ] Automate verification that reserves ≥ USBTC supply
+- [ ] Set rules for peg-in and peg-out transactions
+- [ ] Establish limits for minting and burning USBTC
 
-- [ ] **Maintain 1:1 Collateral Ratio**
-  - Track that BTC in reserve addresses ≥ USBTC in circulation.
-  - Use scripts or API feeds to monitor the ratio in real-time.
+## 4. Governance & Compliance
+- [ ] Define governance for mint/burn operations
+- [ ] Document audit and PoR reporting schedule
+- [ ] Publish risk disclosures and disclaimers
+- [ ] Keep logs of issuance, redemption, and reserve updates
 
-- [ ] **Publish Periodic Snapshots**
-  - Produce weekly or monthly PoR reports.
-  - Include blockchain proofs and USBTC circulating supply screenshots from Liquid explorer.
-  - Timestamp reports on-chain (OP_RETURN in BTC or Liquid).
+## 5. Monitoring & Reporting
+- [ ] Dashboard for reserves, supply, and collateral ratio
+- [ ] Publish regular snapshots with blockchain proofs
+- [ ] Timestamp reports on-chain
+- [ ] Optional third-party audits
 
-- [ ] **Optional Peg-in for Liquidity**
-  - Peg a small portion of BTC to L-BTC for operational liquidity.
-  - Keep the majority of reserves on the main BTC chain to preserve BTC-native backing.
-  - Enable USBTC issuance without moving all holdings.
+## 6. User & Liquidity Operations
+- [ ] Pre-fund L-BTC for operational liquidity
+- [ ] Enable redemption flow for USBTC to BTC or L-BTC
+- [ ] Provide wallet support and user guides
+- [ ] Test edge cases and failure scenarios
+
+## 7. Security & Backup
+- [ ] Secure storage of all keys (cold wallets, hardware wallets, multi-sig)
+- [ ] Implement disaster recovery procedures
+- [ ] Monitor for unusual or suspicious activity
