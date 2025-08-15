@@ -2,7 +2,7 @@
 
 Initial idea:
 
-$100M initial circulation, backed by Satoshi wallets
+$100M initial circulation, backed by Satoshi wallets 3 through 22
 
 Stablecoin value: $1.39
 
